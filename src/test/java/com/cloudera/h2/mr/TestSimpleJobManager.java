@@ -7,16 +7,16 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class TestJobManager {
+public class TestSimpleJobManager {
 
   private static final Logger logger = LoggerFactory
-      .getLogger(TestJobManager.class);
+      .getLogger(TestSimpleJobManager.class);
 
-  private JobManager jobManager;
+  private SimpleJobManager jobManager;
 
   @Before
   public void setup() {
-    jobManager = new JobManager();
+    jobManager = new SimpleJobManager();
   }
 
   @Test
