@@ -1,5 +1,7 @@
 package com.cloudera.h2.mr;
 
-public class Client {
+public interface Client {
+
+  public JobAttempt submitJob(Job job);
 
 }
