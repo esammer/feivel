@@ -1,11 +1,15 @@
 package com.cloudera.h2.mr.util.observer;
 
+import java.util.LinkedList;
 import java.util.List;
-
 
 public class ObserverSupport {
 
   private List<Observer> observers;
+
+  public ObserverSupport() {
+    observers = new LinkedList<Observer>();
+  }
 
   public void addObserver(Observer observer) {
     observers.add(observer);
