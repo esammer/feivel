@@ -11,6 +11,7 @@ public class JobAttempt {
     attempt = new JobAttempt();
 
     attempt.setId(JobAttempt.generateId(job));
+    attempt.setJob(job);
 
     return attempt;
   }
