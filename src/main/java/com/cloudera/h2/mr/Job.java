@@ -2,14 +2,18 @@ package com.cloudera.h2.mr;
 
 import java.util.Set;
 
+import com.cloudera.h2.mr.util.DynamicMap;
+
 public class Job {
 
   private long id;
   private Set<Task> mapTasks;
   private Set<Task> reduceTasks;
+  private DynamicMap parameters;
 
   public Job() {
     id = 0;
+    parameters = new DynamicMap();
   }
 
   public long getId() {
@@ -34,6 +38,14 @@ public class Job {
 
   public void setReduceTasks(Set<Task> reduceTasks) {
     this.reduceTasks = reduceTasks;
+  }
+
+  public DynamicMap getParameters() {
+    return parameters;
+  }
+
+  public void setParameters(DynamicMap parameters) {
+    this.parameters = parameters;
   }
 
 }
