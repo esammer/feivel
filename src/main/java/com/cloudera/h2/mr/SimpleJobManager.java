@@ -19,16 +19,16 @@ public class SimpleJobManager implements JobManager, Observable {
     observerSupport = new ObserverSupport();
   }
 
-  public void addJobAttempt(JobAttempt jobAttempt) {
+  public synchronized void addJobAttempt(JobAttempt jobAttempt) {
     activeJobs.put(jobAttempt.getId(), jobAttempt);
   }
 
-  public Collection<JobAttempt> getActiveAttempts() {
+  public synchronized Collection<JobAttempt> getActiveAttempts() {
     return activeJobs.values();
   }
 
   @Override
-  public JobAttempt submitJob(Job job) {
+  public synchronized JobAttempt submitJob(Job job) {
     JobAttempt attempt;
 
     attempt = JobAttempt.withJob(job);
