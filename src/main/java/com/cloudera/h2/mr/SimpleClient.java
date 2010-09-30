@@ -1,9 +1,9 @@
 package com.cloudera.h2.mr;
 
-import com.cloudera.h2.mr.util.observer.Observable;
-import com.cloudera.h2.mr.util.observer.Observer;
-import com.cloudera.h2.mr.util.observer.ObserverEvent;
-import com.cloudera.h2.mr.util.observer.ObserverSupport;
+import net.lifeless.observer.Observable;
+import net.lifeless.observer.Observer;
+import net.lifeless.observer.ObserverEvent;
+import net.lifeless.observer.ObserverSupport;
 
 public class SimpleClient implements Client, Observable {
 

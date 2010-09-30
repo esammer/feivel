@@ -4,15 +4,21 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.cloudera.h2.mr.scheduler.FIFOScheduler;
+
 public class TestSimpleClient {
 
   private SimpleClient client;
 
   @Before
   public void setup() {
-    client = new SimpleClient();
+    SimpleJobManager jobManager;
 
-    client.setJobManager(new SimpleJobManager());
+    client = new SimpleClient();
+    jobManager = new SimpleJobManager();
+
+    jobManager.setScheduler(new FIFOScheduler<JobAttempt>());
+    client.setJobManager(jobManager);
   }
 
   @Test

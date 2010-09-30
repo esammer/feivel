@@ -4,15 +4,18 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.cloudera.h2.mr.util.observer.Observable;
-import com.cloudera.h2.mr.util.observer.Observer;
-import com.cloudera.h2.mr.util.observer.ObserverEvent;
-import com.cloudera.h2.mr.util.observer.ObserverSupport;
+import net.lifeless.observer.Observable;
+import net.lifeless.observer.Observer;
+import net.lifeless.observer.ObserverEvent;
+import net.lifeless.observer.ObserverSupport;
+
+import com.cloudera.h2.mr.scheduler.Scheduler;
 
 public class SimpleJobManager implements JobManager, Observable {
 
   private Map<String, JobAttempt> activeJobs;
   private ObserverSupport observerSupport;
+  private Scheduler<JobAttempt> scheduler;
 
   public SimpleJobManager() {
     activeJobs = new HashMap<String, JobAttempt>();
@@ -33,6 +36,11 @@ public class SimpleJobManager implements JobManager, Observable {
 
     attempt = JobAttempt.withJob(job);
 
+    if (!scheduler.schedule(attempt)) {
+      throw new IllegalStateException("Unable to schedule job attempt:"
+          + attempt);
+    }
+
     addJobAttempt(attempt);
 
     observerSupport.dispatchEvent(ObserverEvent.withTypeAndSubject(
@@ -49,6 +57,22 @@ public class SimpleJobManager implements JobManager, Observable {
   @Override
   public void removeObserver(Observer observer) {
     observerSupport.removeObserver(observer);
+  }
+
+  public Map<String, JobAttempt> getActiveJobs() {
+    return activeJobs;
+  }
+
+  public void setActiveJobs(Map<String, JobAttempt> activeJobs) {
+    this.activeJobs = activeJobs;
+  }
+
+  public Scheduler<JobAttempt> getScheduler() {
+    return scheduler;
+  }
+
+  public void setScheduler(Scheduler<JobAttempt> scheduler) {
+    this.scheduler = scheduler;
   }
 
 }

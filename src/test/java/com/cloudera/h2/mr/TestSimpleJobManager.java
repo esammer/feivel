@@ -1,11 +1,12 @@
 package com.cloudera.h2.mr;
 
-import junit.framework.Assert;
-
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.cloudera.h2.mr.scheduler.FIFOScheduler;
 
 public class TestSimpleJobManager {
 
@@ -17,6 +18,8 @@ public class TestSimpleJobManager {
   @Before
   public void setup() {
     jobManager = new SimpleJobManager();
+
+    jobManager.setScheduler(new FIFOScheduler<JobAttempt>());
   }
 
   @Test
