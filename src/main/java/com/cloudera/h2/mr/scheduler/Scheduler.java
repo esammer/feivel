@@ -6,4 +6,6 @@ public interface Scheduler<T> {
 
   public T poll();
 
+  public long getCount();
+
 }

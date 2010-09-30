@@ -18,15 +18,26 @@ public class FIFOScheduler<T> implements Scheduler<T> {
   }
 
   @Override
-  public boolean schedule(T item) {
+  public synchronized boolean schedule(T item) {
     logger.info("Scheduling item " + item);
 
     return queue.offer(item);
   }
 
   @Override
-  public T poll() {
-    return queue.poll();
+  public synchronized T poll() {
+    T item;
+
+    item = queue.poll();
+
+    logger.info("Returning item " + item);
+
+    return item;
+  }
+
+  @Override
+  public synchronized long getCount() {
+    return queue.size();
   }
 
 }
