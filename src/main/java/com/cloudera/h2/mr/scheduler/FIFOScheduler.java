@@ -42,7 +42,7 @@ public class FIFOScheduler<T> implements Scheduler<T> {
       now = System.currentTimeMillis();
 
       if (item == null) {
-        Thread.sleep(100);
+        Thread.sleep(Math.min(100, endTime - now));
       }
     } while (item == null && now < endTime);
 
