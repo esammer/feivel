@@ -1,9 +1,13 @@
-package com.cloudera.h2.mr;
+package com.cloudera.h2.mr.client;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.cloudera.h2.mr.Job;
+import com.cloudera.h2.mr.JobAttempt;
+import com.cloudera.h2.mr.client.SimpleClient;
+import com.cloudera.h2.mr.jobmanager.SimpleJobManager;
 import com.cloudera.h2.mr.scheduler.FIFOScheduler;
 
 public class TestSimpleClient {
