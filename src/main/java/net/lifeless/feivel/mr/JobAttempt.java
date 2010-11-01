@@ -1,4 +1,4 @@
-package com.cloudera.h2.mr;
+package net.lifeless.feivel.mr;
 
 public class JobAttempt {
 

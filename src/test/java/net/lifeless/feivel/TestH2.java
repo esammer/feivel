@@ -1,4 +1,4 @@
-package com.cloudera.h2;
+package net.lifeless.feivel;
 
 import org.junit.Test;
 import org.slf4j.Logger;

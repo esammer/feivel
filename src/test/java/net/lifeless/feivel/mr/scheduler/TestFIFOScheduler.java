@@ -1,13 +1,17 @@
-package com.cloudera.h2.mr.scheduler;
+package net.lifeless.feivel.mr.scheduler;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+
+import net.lifeless.feivel.mr.scheduler.FIFOScheduler;
+import net.lifeless.feivel.mr.scheduler.Scheduler;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 
 public class TestFIFOScheduler {
 

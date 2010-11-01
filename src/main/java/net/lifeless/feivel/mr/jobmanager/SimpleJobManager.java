@@ -1,17 +1,17 @@
-package com.cloudera.h2.mr.jobmanager;
+package net.lifeless.feivel.mr.jobmanager;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import net.lifeless.feivel.mr.Job;
+import net.lifeless.feivel.mr.JobAttempt;
+import net.lifeless.feivel.mr.scheduler.Scheduler;
 import net.lifeless.observer.Observable;
 import net.lifeless.observer.Observer;
 import net.lifeless.observer.ObserverEvent;
 import net.lifeless.observer.ObserverSupport;
 
-import com.cloudera.h2.mr.Job;
-import com.cloudera.h2.mr.JobAttempt;
-import com.cloudera.h2.mr.scheduler.Scheduler;
 
 public class SimpleJobManager implements JobManager, Observable {
 

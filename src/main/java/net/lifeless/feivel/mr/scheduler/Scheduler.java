@@ -1,4 +1,4 @@
-package com.cloudera.h2.mr.scheduler;
+package net.lifeless.feivel.mr.scheduler;
 
 import java.util.concurrent.TimeUnit;
 

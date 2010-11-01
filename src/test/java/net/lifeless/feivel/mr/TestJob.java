@@ -1,8 +1,11 @@
-package com.cloudera.h2.mr;
+package net.lifeless.feivel.mr;
+
+import net.lifeless.feivel.mr.Job;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
 
 public class TestJob {
 

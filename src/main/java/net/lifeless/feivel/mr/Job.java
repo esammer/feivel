@@ -1,8 +1,9 @@
-package com.cloudera.h2.mr;
+package net.lifeless.feivel.mr;
 
 import java.util.Set;
 
-import com.cloudera.h2.mr.util.DynamicMap;
+import net.lifeless.feivel.mr.util.DynamicMap;
+
 
 public class Job {
 

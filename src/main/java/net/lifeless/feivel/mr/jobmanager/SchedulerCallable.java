@@ -1,11 +1,12 @@
-package com.cloudera.h2.mr.jobmanager;
+package net.lifeless.feivel.mr.jobmanager;
 
 import java.util.concurrent.Callable;
+
+import net.lifeless.feivel.mr.scheduler.Scheduler;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.cloudera.h2.mr.scheduler.Scheduler;
 
 public class SchedulerCallable<T extends Scheduler<T>> implements
     Callable<Boolean> {

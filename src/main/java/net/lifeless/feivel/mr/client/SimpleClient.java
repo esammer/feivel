@@ -1,10 +1,10 @@
-package com.cloudera.h2.mr.client;
+package net.lifeless.feivel.mr.client;
 
-import com.cloudera.h2.mr.Client;
-import com.cloudera.h2.mr.Job;
-import com.cloudera.h2.mr.JobAttempt;
-import com.cloudera.h2.mr.jobmanager.JobManager;
 
+import net.lifeless.feivel.mr.Client;
+import net.lifeless.feivel.mr.Job;
+import net.lifeless.feivel.mr.JobAttempt;
+import net.lifeless.feivel.mr.jobmanager.JobManager;
 import net.lifeless.observer.Observable;
 import net.lifeless.observer.Observer;
 import net.lifeless.observer.ObserverEvent;

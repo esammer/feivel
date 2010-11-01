@@ -1,14 +1,15 @@
-package com.cloudera.h2.mr.client;
+package net.lifeless.feivel.mr.client;
+
+import net.lifeless.feivel.mr.Job;
+import net.lifeless.feivel.mr.JobAttempt;
+import net.lifeless.feivel.mr.client.SimpleClient;
+import net.lifeless.feivel.mr.jobmanager.SimpleJobManager;
+import net.lifeless.feivel.mr.scheduler.FIFOScheduler;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.cloudera.h2.mr.Job;
-import com.cloudera.h2.mr.JobAttempt;
-import com.cloudera.h2.mr.client.SimpleClient;
-import com.cloudera.h2.mr.jobmanager.SimpleJobManager;
-import com.cloudera.h2.mr.scheduler.FIFOScheduler;
 
 public class TestSimpleClient {
 

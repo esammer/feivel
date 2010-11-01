@@ -1,4 +1,4 @@
-package com.cloudera.h2.mr.util;
+package net.lifeless.feivel.mr.util;
 
 import java.util.HashMap;
 
